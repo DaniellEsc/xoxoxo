@@ -26,7 +26,7 @@ const TicTac = () => {
     if (lock) {
       return 0;
     }
-    if (count%2 == 0) {
+    if (count%2 === 0) {
       e.target.innerHTML = `<img src=${Cross}>`;
       data[num] = "x";
       setCount(++count);
@@ -42,35 +42,35 @@ const TicTac = () => {
 
 
   const check = () => {
-    if (data[0] === data[1] && data[1]==data[2] && data[2] !=="") {
+    if (data[0] === data[1] && data[1]===data[2] && data[2] !=="") {
       win(data[2]);
     }
-    else if (data[3] === data[4] && data[4]==data[5] && data[5] !=="") {
+    else if (data[3] === data[4] && data[4]===data[5] && data[5] !=="") {
       win(data[5]);
     }
-    else if (data[6] === data[7] && data[7]==data[8] && data[8] !=="") {
+    else if (data[6] === data[7] && data[7]===data[8] && data[8] !=="") {
       win(data[8]);
     }
-    else if (data[0] === data[3] && data[3]==data[6] && data[6] !=="") {
+    else if (data[0] === data[3] && data[3]===data[6] && data[6] !=="") {
       win(data[6]);
     }
-    else if (data[1] === data[4] && data[4]==data[7] && data[7] !=="") {
+    else if (data[1] === data[4] && data[4]===data[7] && data[7] !=="") {
       win(data[7]);
     }
-    else if (data[2] === data[5] && data[5]==data[8] && data[8] !=="") {
+    else if (data[2] === data[5] && data[5]===data[8] && data[8] !=="") {
       win(data[8]);
     }
-    else if (data[0] === data[4] && data[4]==data[8] && data[8] !=="") {
+    else if (data[0] === data[4] && data[4]===data[8] && data[8] !=="") {
       win(data[8]);
     }
-    else if (data[2] === data[4] && data[4]==data[6] && data[6] !=="") {
+    else if (data[2] === data[4] && data[4]===data[6] && data[6] !=="") {
       win(data[6]);
     }
   }
 
   const win = (winner) => {
     setLock(true);
-    if (winner == 'x') {
+    if (winner === 'x') {
       title.current.innerHTML = `<img style="width:40px; heigth:40px" src=${Cross}>`;
     } else {
       title.current.innerHTML = `<img style="width:40px; heigth:40px" src=${Circle}>`;
@@ -83,6 +83,7 @@ const TicTac = () => {
     title.current.innerHTML=``;
     box_array.map((e) => {
       e.current.innerHTML='';
+      return null; 
     })
   }
 
